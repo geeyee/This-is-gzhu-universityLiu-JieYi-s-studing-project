@@ -1,7 +1,7 @@
 /**
  * Created by airing on 15/10/19.
  */
-var documentWidth = window.screen.availWidth >500? 500: window.screen.availWidth;
+var documentWidth = window.screen.availWidth >400? 400: window.screen.availWidth;
 var margin = 0.04 * documentWidth;
 var game_width = 0.92 * documentWidth;
 var box_width = 0.18 * documentWidth;
@@ -183,7 +183,7 @@ function drawBox(cxt, i, j, nums){
     }
 
     cxt.fill();
-}s
+}
 
 //刷新View
 function updateBoardView(cxt) {

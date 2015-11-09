@@ -100,37 +100,36 @@ document.addEventListener('touchend',function(event){
         return false;
 
     //任务1：实现移动端触摸逻辑
-    if (Math.abs(daltaX) >= Math.abs(daltaY)){
-        if(daltaX >= 0){
+    if (Math.abs(daltaX) >= Math.abs(daltaY)) {
+        if (daltaX >= 0) {
             if (moveRight()) {
                 newBox(context);
                 isGameOver();
             }
         }
-    }
-    else{
-        if (daltaX < 0){
-            if (moveLeft()) {
-                newBox(context);
-                isGameOver();
+        else {
+            if (daltaX < 0) {
+                if (moveLeft()) {
+                    newBox(context);
+                    isGameOver();
+                }
             }
         }
     }
 
-
-    if (Math.abs(daltaY) > Math.abs(daltaX)){
-        if(daltaY >= 0){
+    if (Math.abs(daltaY) > Math.abs(daltaX)) {
+        if (daltaY >= 0) {
             if (moveDown()) {
                 newBox(context);
                 isGameOver();
             }
         }
-    }
-    else{
-        if (daltaY < 0){
-            if (moveUp()) {
-                newBox(context);
-                isGameOver();
+        else {
+            if (daltaY < 0) {
+                if (moveUp()) {
+                    newBox(context);
+                    isGameOver();
+                }
             }
         }
     }
