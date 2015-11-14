@@ -192,7 +192,7 @@ function moveUp() {
                         nums[i][k] = nums[i][j];
                         nums[i][j] = 0
                     }
-                    else if (nums[i][k] == nums[i][j] && noBlockHorizontal(i, k, j, nums)) {
+                    else if (nums[i][k] == nums[i][j] && noBlockVertical(i, k, j, nums)) {
                         nums[i][k] += nums[i][k];
                         nums[i][j] = 0;
                         score = score + nums[i][k];
@@ -275,7 +275,7 @@ function moveDown() {
                         nums[i][k] = nums[i][j];
                         nums[i][j] =0;
                     }
-                    else if (nums[i][k] == nums[i][j] && noBlockHorizontal(i, k, j, nums)){
+                    else if (nums[i][k] == nums[i][j] && noBlockVertical(i, k, j, nums)){
                         nums[i][k] += nums[i][k];
                         nums[i][j] = 0;
                         score = score + nums[i][k];
@@ -305,6 +305,12 @@ function canMoveDown() {
 
 function noBlockVertical(col, row1, row2, nums) {
     //任务8：实现判断垂直方向上是否有障碍物
+    for (var i = row1 + 1; i < row2; i++) {
+        if (nums[col][i] != 0) {
+            return false;
+        }
+    }
+    return true;
 }
 
 function noBlockHorizontal(row, col1, col2, nums) {
